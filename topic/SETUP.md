@@ -1,8 +1,8 @@
 # PHP and Composer Installation
-
 - Windows
     - Download [php](https://www.php.net/)
     - Download [Composer](https://getcomposer.org/)
+        >> Is a dependency management tool for PHP
 - Ubuntu
     - Run this command
         - `sudo apt install php-cli`
