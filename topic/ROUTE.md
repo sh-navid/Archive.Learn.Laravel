@@ -86,8 +86,3 @@
 - Redirect
     - `Route::redirect('/root', '/home', 301);`
     - [`301` error code ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301) means Moved Permanently.
-- CSRF Token
-    - [Cross Site Request Forgery](https://owasp.org/www-community/attacks/csrf)
-    - [How to handle this in laravel?](https://laravel.com/docs/5.6/routing)
-    - Make a view named `form.blade.php` with this content:
-    - MAKE EXAMPLE WITH AJAX AND NORMAL REQUEST
