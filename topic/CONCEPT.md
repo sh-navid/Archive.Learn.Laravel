@@ -22,12 +22,7 @@
     - Hypertext Transfer Protocol (HTTP)
         >> Is an application-layer protocol for transmitting hypermedia documents, such as HTML. It was designed for communication between web browsers and web servers, but it can also be used for other purposes. <sup>[mozilla Jan26](https://developer.mozilla.org/en-US/docs/Web/HTTP)</sup>
         - HTTP Headers
-            - `Accept`: `text/html`
-            - `Accept-Encoding`: `gzip`
-                >> This header indicates the content encoding (usually a compression algorithm) that the client can understand. <sup>[mozilla Jan26](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)</sup>   
-            - `Accept-Language`: `en-US`
-            - `Accept-Post`: `image/webp`
-                >> This header advertises which media types are accepted by the server for HTTP post requests.<sup>[mozilla Jan26](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Post)</sup>   
+            - `FIXME: Read about headers later` 
     - Hypertext Transfer Protocol Secure (HTTPS) 
         >> Is an extension of the `HTTP`. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>   
         >> It uses cryptography for secure communication over a computer network. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>   
