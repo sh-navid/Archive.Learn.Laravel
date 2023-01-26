@@ -5,7 +5,7 @@
 - [Setup](topic/SETUP.md)
 - [Maintenance](topic/MAINTENANCE.md)
 - [Routes](topic/ROUTE.md)
-- [CSRF](topic/CSRF.md)
+- ** [CSRF](topic/CSRF.md)
 - ** [Database](topic/DATABASE.md)
 - ** [Basic Auth](topic/AUTH.md)
 - ** Make extra directories
@@ -15,3 +15,4 @@
     - `make:rule`
 - ** `php artisan key:generate`
     >> For session securing and encrypted data keys
+- `return Redirect::to('login');`
