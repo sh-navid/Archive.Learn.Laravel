@@ -12,3 +12,4 @@
     - `make:mail`
     - `make:notification`
     - `make:rule`
+- [Basic Auth](topic/AUTH.md)
