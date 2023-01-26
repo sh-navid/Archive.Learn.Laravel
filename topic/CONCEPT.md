@@ -1,6 +1,6 @@
 # Concepts
 - **Disclaimer:** ***The content of this document is compiled for learning purposes only. It may be irrelevant or wrong in content or perception.***
-## Different Terms
+## Different (Maybe Unrelated) Terms You May Hear
 - Architectural Pattern
     - MVC
     - MVVM
@@ -20,14 +20,26 @@
     - Docker
 - Application Layer Protocols
     - Hypertext Transfer Protocol (HTTP)
-    - Hypertext Transfer Protocol Secure (HTTPS)
-        >> Is an extension of the `HTTP`. <sup>[Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>
-        >> It uses cryptography for secure communication over a computer network. <sup>[Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>
-        >> In `HTTPS`, the communication protocol is encrypted using `TLS` or, formerly, `SSL`. <sup>[Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>
-        >> The protocol is therefore also referred to as `HTTP over TLS` or `HTTP over SSL`. <sup>[Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>
+        >> Is an application-layer protocol for transmitting hypermedia documents, such as HTML. It was designed for communication between web browsers and web servers, but it can also be used for other purposes. <sup>[mozilla Jan26](https://developer.mozilla.org/en-US/docs/Web/HTTP)</sup>
+        - HTTP Headers
+            - `Accept`: `text/html`
+            - `Accept-Encoding`: `gzip`
+                >> This header indicates the content encoding (usually a compression algorithm) that the client can understand. <sup>[wikipedia Jan26](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)</sup>   
+            - `Accept-Language`: `en-US`
+            - `Accept-Post`: `image/webp`
+                >> This header advertises which media types are accepted by the server for HTTP post requests.<sup>[wikipedia Jan26](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Post)</sup>   
+    - Hypertext Transfer Protocol Secure (HTTPS) 
+        >> Is an extension of the `HTTP`. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>   
+        >> It uses cryptography for secure communication over a computer network. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>   
+        >> In `HTTPS`, the communication protocol is encrypted using `TLS` or, formerly, `SSL`. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>   
+        >> The protocol is therefore also referred to as `HTTP over TLS` or `HTTP over SSL`. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>   
+        >> `HTTPS` URLs begin with `https://` and use port `443` by default, whereas, `HTTP` URLs begin with `http://` and use port `80` by default. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>   
+        >> `HTTP` is not encrypted and thus is vulnerable to `man-in-the-middle` and `eavesdropping` attacks. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/HTTPS)</sup>    
     - Simple Mail Transfer Protocol (SMTP)
     - File Transfer Protocol (FTP)
     - Secure Shell Protocol (SSH)
     - Transport Layer Security (TLS)
     - Secure Sockets Layer (SSL)
         - TLS vs SSL ???
+- Tools
+    - Postman
