@@ -40,3 +40,7 @@ Route::patch('/Patch', function () {
 Route::get('/about', function () {
     return view("about");
 });
+
+Route::get('/test/{name}', function ($name) {
+    return view("test");
+});

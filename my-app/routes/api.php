@@ -21,3 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("/hello", function () {
     return "This is our simple hello API";
 });
+
+Route::get("/hi/{name}", function ($name) {
+    return "Hello " . $name;
+});
+
+Route::get("/bye/{name?}", function ($name = "") {
+    return "Bye " . $name;
+});
