@@ -1,4 +1,6 @@
 # Laravel 
+***Disclaimer*: The content described in this article are for educational purposes only.**
+---
 ## Database
 - Commands
     - `php artisan db:show`

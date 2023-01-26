@@ -1,4 +1,6 @@
 # Laravel
+***Disclaimer*: The content described in this article are for educational purposes only.**
+---
 ## Route
 - `web.php`
     - Provides features like `session state` and `CSRF` protection [more](https://laravel.com/docs/5.6/routing).

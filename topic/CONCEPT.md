@@ -1,5 +1,6 @@
 # Concepts
-- **Disclaimer:** ***The content of this document is compiled for learning purposes only. It may be irrelevant or wrong in content or perception.***
+***Disclaimer*: The content described in this article are for educational purposes only.**
+---
 ## Different (Maybe Unrelated) Terms You May Hear
 - Architectural Pattern
     - MVC

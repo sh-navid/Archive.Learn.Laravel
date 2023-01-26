@@ -1,4 +1,6 @@
 # PHP and Composer Installation
+***Disclaimer*: The content described in this article are for educational purposes only.**
+---
 - Windows
     - Download [php](https://www.php.net/)
     - Download [Composer](https://getcomposer.org/)

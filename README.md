@@ -1,4 +1,6 @@
 # Laravel Test Application
+***Disclaimer*: The content described in this repository are for educational purposes only.**
+---
 - Laravel uses model-view-controller (MVC) architectural pattern.
 - Laravel 1 was released in 2011.
 - ** [Concepts](topic/CONCEPT.md)
