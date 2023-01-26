@@ -44,3 +44,13 @@ Route::get('/about', function () {
 Route::get('/test/{name}', function ($name) {
     return view("test");
 });
+
+Route::match(['get', 'post'], '/match', function () {
+    return "Route Match";
+});
+
+Route::any('/any', function () {
+    return "Route Any";
+});
+
+Route::redirect('/root', '/home', 301);

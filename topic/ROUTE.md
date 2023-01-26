@@ -71,3 +71,17 @@
         ~~~
         - Call: `http://127.0.0.1:8000/api/bye`
         - Call: `http://127.0.0.1:8000/api/bye/david`
+- Any and Match
+    ~~~php
+    Route::match(['get', 'post'], '/match', function () {
+        return "Route Match";
+    });
+    ~~~
+ 
+    ~~~php
+    Route::any('/any', function () {
+        return "Route Any";
+    });
+    ~~~
+- Redirect
+    - `Route::redirect('/root', '/home', 301);`
