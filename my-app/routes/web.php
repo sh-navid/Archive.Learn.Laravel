@@ -21,22 +21,6 @@ Route::get('/home', function () {
     return "<h1>Home Page</h1>";
 });
 
-Route::post('/post', function () {
-    return "<h1>Post Request</h1>";
-});
-
-Route::put('/Put', function () {
-    return "<h1>put Request</h1>";
-});
-
-Route::delete('/Delete', function () {
-    return "<h1>Post Request</h1>";
-});
-
-Route::patch('/Patch', function () {
-    return "<h1>Patch Request</h1>";
-});
-
 Route::get('/about', function () {
     return view("about");
 });
@@ -54,3 +38,7 @@ Route::any('/any', function () {
 });
 
 Route::redirect('/root', '/home', 301);
+
+Route::get('/csrf', function () {
+    return view("csrf");
+});
