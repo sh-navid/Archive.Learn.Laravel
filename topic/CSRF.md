@@ -1,5 +1,6 @@
 # CSRF
-- ...
+- [Cross Site Request Forgery](https://owasp.org/www-community/attacks/csrf)
+- [How to handle this in laravel?](https://laravel.com/docs/5.6/routing)
 # Laravel + CSRF
 - Make a route in `web.php` like this:
     ~~~php
