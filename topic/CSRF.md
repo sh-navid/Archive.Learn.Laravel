@@ -48,4 +48,3 @@
 ___
 - [ ] TODO: Read [this document](https://laravel.com/docs/5.6/csrf) again for `X-CSRF-TOKEN` and `X-XSRF-TOKEN`
 - [ ] TODO: Read more about CSRF attacks and examples
-- [ ] TODO: Check if you are verfitying CSRF token correctly
