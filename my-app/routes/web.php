@@ -30,5 +30,9 @@ Route::get('/csrf', function () {
 
 Route::post("/csrf-form", function () {
     // $data = file_get_contents('php://input');
-    return "The value of input text is: ".$_POST["myText"];
+    return "The value of input text is: " . $_POST["myText"];
 });
+
+
+use App\Http\Controllers\HelloController;
+Route::get("/say/hello", [HelloController::class, "say"]);
