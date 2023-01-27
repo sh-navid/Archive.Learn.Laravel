@@ -41,9 +41,14 @@ Route::get("/say/hello", [HelloController::class, "say"])->middleware("hello");
 
 use App\Http\Controllers\BookController;
 Route::resource("/book", BookController::class); // For default CRUD
-Route::controller("/book", BookController::class); // For Custom Controllers
+// Route::controller("/book", BookController::class); // For Custom Controllers
 
 
 Route::get('/show', function () {
     return view("book");
+});
+
+
+Route::get('/home', function () {
+    return view('home', ['title' => 'My Page']);
 });
