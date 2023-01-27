@@ -4,6 +4,10 @@
 ## Different (Maybe Unrelated) Terms You May Hear
 - Architectural Pattern
     - MVC
+        - Model
+        - View
+        - Controller
+            >> It acts as a directing traffic between Views and Models. <sup>[tutorialspoint Jan27](https://www.tutorialspoint.com/laravel/laravel_controllers.htm)</sup>
     - MVVM
     - MVP
 - Design Pattern
