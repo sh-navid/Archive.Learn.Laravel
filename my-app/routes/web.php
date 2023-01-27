@@ -35,4 +35,6 @@ Route::post("/csrf-form", function () {
 
 
 use App\Http\Controllers\HelloController;
-Route::get("/say/hello", [HelloController::class, "say"]);
+//Route::get("/say/hello", [HelloController::class, "say"]);
+Route::get("/say/hello", [HelloController::class, "say"])->middleware("hello");
+
