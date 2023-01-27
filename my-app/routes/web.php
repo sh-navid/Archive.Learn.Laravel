@@ -41,3 +41,8 @@ Route::get("/say/hello", [HelloController::class, "say"])->middleware("hello");
 
 use App\Http\Controllers\BookController;
 Route::resource("/book", BookController::class);
+
+
+Route::get('/show', function () {
+    return view("book");
+});

@@ -106,5 +106,49 @@
     use App\Http\Controllers\BookController;
     Route::resource("/book", BookController::class);
     ~~~
+## Connect to Resource Controller
+- Make a view and name it `book.blade.php` with this content:
+    ~~~blade
+    <form method="POST" action="{{route("book.destroy",0)}}">
+        <input type="submit" value="Delete"/>
+        @csrf
+        @method('DELETE')
+    </form>
+
+    <form method="POST" action="{{route("book.update",0)}}">
+        <input type="submit" value="Update"/>
+        @csrf
+        @method('PUT')
+    </form>
+
+    <form method="GET" action="{{route("book.show",0)}}">
+        <input type="submit" value="Show"/>
+    </form>
+
+    <form method="GET" action="{{route("book.edit",0)}}">
+        <input type="submit" value="Edit"/>
+    </form>
+
+    <form method="GET" action="{{route("book.create")}}">
+        <input type="submit" value="Create"/>
+    </form>
+
+    <form method="GET" action="{{route("book.index")}}">
+        <input type="submit" value="Index"/>
+    </form>
+
+    <form method="POST" action="{{route("book.store")}}">
+        <input type="submit" value="Store"/>
+        @csrf
+        {{-- Remove CSRF Token to see 419 | Page Expired error --}}
+    </form>
+    ~~~
+- Add a route for our view:
+    ~~~php
+    Route::get('/show', function () {
+        return view("book");
+    });
+    ~~~
 ___
 - [ ] TODO: read more about this [here](https://magecomp.com/blog/crud-operation-laravel-8/) 
+- `php artisan make:controller UserController --resource --model=User`
