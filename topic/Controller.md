@@ -51,36 +51,50 @@
     ~~~php
     class BookController extends Controller
     {
+        // http://127.0.0.1:8000/book
+        // Method GET
         public function index()
         {
             return "<h1>[INDEX]</h1>";
         }
 
+        // http://127.0.0.1:8000/book/create
+        // Method GET
         public function create()
         {
             return "<h1>[CREATE]</h1>";
         }
 
+        // http://127.0.0.1:8000/book
+        // Method POST
         public function store(Request $request)
         {
             return "<h1>[STORE]</h1>";
         }
 
+        // http://127.0.0.1:8000/book/2
+        // Method GET
         public function show($id)
         {
             return "<h1>[SHOW $id]</h1>";
         }
 
+        // http://127.0.0.1:8000/book/2/edit
+        // Method GET
         public function edit($id)
         {
             return "<h1>[EDIT $id]</h1>";
         }
 
+        // http://127.0.0.1:8000/book/2
+        // Method PUT/PATCH
         public function update(Request $request, $id)
         {
             return "<h1>[UPDATE $id]</h1>";
         }
 
+        // http://127.0.0.1:8000/book/2
+        // Method DELETE
         public function destroy($id)
         {
             return "<h1>[DESTROY $id]</h1>";
