@@ -13,5 +13,17 @@
     @else
         goodbye
     @endif
+
+    <br/>
+
+    @unless (false)
+        This is false
+    @endunless
+
+    <br/>
+
+    @empty([])
+        Array is empty
+    @endempty
 </body>
 </html>

@@ -35,3 +35,67 @@
         @endif
     </body>
     ~~~
+- Unless
+    ~~~blade
+    @unless (false)
+        This is false
+    @endunless
+    ~~~
+- Check empty array
+    ~~~blade
+    @empty([])
+        Array is empty
+    @endempty
+    ~~~
+- Unchecked
+    ~~~blade
+    @isset($var)
+    @endisset
+    ~~~
+
+    ~~~blade
+    @switch($i)
+        @case(1)
+            Do something
+            @break
+    
+        @default
+            Do something
+    @endswitch
+    ~~~
+
+    ~~~blade
+    @foreach ($arr as $item)
+    @endforeach
+    ~~~
+
+    ~~~blade
+    @for ($i = 0; $i < 30; $i++)
+    @endfor
+    ~~~
+
+    ~~~blade
+    @forelse ($arr as $item)
+    @empty
+        // no item
+    @endforelse
+    ~~~
+
+    ~~~blade
+    @while (true)
+    @endwhile
+    ~~~
+
+    ~~~blade
+    @php
+        $var = false;
+    @endphp
+    ~~~
+
+    ~~~blade
+    @include('something.something')
+    @includeIf
+    @includewhen
+    @includeUnless
+    @includeFirst
+    ~~~
