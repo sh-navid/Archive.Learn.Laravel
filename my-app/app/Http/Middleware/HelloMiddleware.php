@@ -16,6 +16,7 @@ class HelloMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        echo "<h1>Hello Middleware</h1>";
         return $next($request);
     }
 }

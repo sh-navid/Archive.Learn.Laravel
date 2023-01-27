@@ -38,3 +38,6 @@ use App\Http\Controllers\HelloController;
 //Route::get("/say/hello", [HelloController::class, "say"]);
 Route::get("/say/hello", [HelloController::class, "say"])->middleware("hello");
 
+
+use App\Http\Controllers\BookController;
+Route::resource("/book", BookController::class);
