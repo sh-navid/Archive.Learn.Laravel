@@ -29,8 +29,3 @@ Route::get("/hi/{name}", function ($name) {
 Route::get("/bye/{name?}", function ($name = "") {
     return "Bye " . $name;
 });
-
-Route::post("/csrf-form", function () {
-    // $data = file_get_contents('php://input');
-    return "The value of input text is: ".$_POST["myText"];
-});
