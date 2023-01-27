@@ -4,7 +4,7 @@
 >> `Cross-site request forgery`, also known as `one-click attack` or `session riding` and abbreviated as `CSRF` or `XSRF`, is a type of malicious exploit of a website or web application where unauthorized commands are submitted from a user that the web application trusts. <sup>[wikipedia Jan26](https://en.wikipedia.org/wiki/Cross-site_request_forgery)</sup> 
 - [How to handle this in laravel?](https://laravel.com/docs/5.6/routing)
 - Read more about CSRF [here](https://blog.pusher.com/csrf-laravel-verifycsrftoken/) and [here](https://owasp.org/www-community/attacks/csrf).
-# Laravel + CSRF
+## Laravel + CSRF
 >> Any HTML forms pointing to `POST`, `PUT`, or `DELETE` routes that are defined in the web routes file should include a `CSRF` token field. Otherwise, the request will be rejected. <sup>[laravel Jan26](https://laravel.com/docs/5.6/routing)</sup>   
 - You can get `419 | Page Expired` error in case not using `@csrf` directive
 - How to use it?
@@ -40,10 +40,10 @@
         ~~~html
         <input type="hidden" name="_token" value="PFIGvtmC13ExEs513knyNPGRyzz8Q3ACVhOVkEIQ">
         ~~~
-# Laravel + JavaScript + X-CSRF-TOKEN
+## Laravel + JavaScript + X-CSRF-TOKEN
 - [ ] TODO: Document this
 
-# Laravel + X-XSRF-TOKEN
+## Laravel + X-XSRF-TOKEN
 - [ ] TODO: Document this
 ___
 - [ ] TODO: Read [this document](https://laravel.com/docs/5.6/csrf) again for `X-CSRF-TOKEN` and `X-XSRF-TOKEN`
