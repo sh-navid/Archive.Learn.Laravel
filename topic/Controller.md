@@ -149,6 +149,30 @@
         return view("book");
     });
     ~~~
+## Add Custom Function to Resource Controller
+- [ ] FIXME: this method is not working
+- Expand `BookController.php` and include these functions:
+    ~~~php
+    // Customs functions
+    // book/title/12
+    // Method GET 
+    public function getTitle($id){
+        return "<h1>[TITLE for $id]</h1>";
+    }
+
+    // Customs functions
+    // book/data/12
+    // Method POST 
+    public function postData($id){
+        return "<h1>[DATA for $id]</h1>";
+    }
+    ~~~
+- Add new route
+    ~~~php
+    use App\Http\Controllers\BookController;
+    Route::resource("/book", BookController::class); // For default CRUD
+    Route::controller("/book", BookController::class); // For Custom Controllers
+    ~~~
 ___
 - [ ] TODO: read more about this [here](https://magecomp.com/blog/crud-operation-laravel-8/) 
 - `php artisan make:controller UserController --resource --model=User`

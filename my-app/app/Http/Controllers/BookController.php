@@ -40,4 +40,18 @@ class BookController extends Controller
     {
         return "<h1>[DESTROY $id]</h1>";
     }
+
+    // Customs functions
+    //
+    // Method GET 
+    public function getTitle($id){
+        return "<h1>[TITLE for $id]</h1>";
+    }
+
+    // Customs functions
+    //
+    // Method POST 
+    public function postData($id){
+        return "<h1>[DATA for $id]</h1>";
+    }
 }
