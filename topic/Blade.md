@@ -99,3 +99,6 @@
     @includeUnless
     @includeFirst
     ~~~
+
+___
+- [ ] TODO: read more about blade [here](https://laravel.com/docs/9.x/blade)
