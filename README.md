@@ -8,6 +8,7 @@
 - [Maintenance](topic/MAINTENANCE.md)
 - [Routes](topic/ROUTE.md)
 - ** [CSRF](topic/CSRF.md)
+- ** [Blade](topic/Blade.md)
 - ** [Database](topic/DATABASE.md)
 - ** [Basic Auth](topic/AUTH.md)
 - ** Make extra directories
