@@ -9,6 +9,8 @@
 - [Routes](topic/ROUTE.md)
 - ** [CSRF](topic/CSRF.md)
 - ** [Controller](topic/Controller.md)
+- Model
+- Migration
 - ** [Blade](topic/Blade.md)
 - ** [Database](topic/DATABASE.md)
 - ** [Basic Auth](topic/AUTH.md)
