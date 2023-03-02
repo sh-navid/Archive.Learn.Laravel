@@ -7,9 +7,9 @@
 - [Setup](topic/SETUP.md)
 - [Maintenance](topic/MAINTENANCE.md)
 - [Routes](topic/ROUTE.md)
-- ** [CSRF](topic/CSRF.md)
+- [CSRF](topic/CSRF.md)
 - ** [Controller](topic/Controller.md)
-- Model
+- ** [Model](topic/Model.md)
 - Migration
 - ** [Blade](topic/Blade.md)
 - ** [Database](topic/DATABASE.md)
