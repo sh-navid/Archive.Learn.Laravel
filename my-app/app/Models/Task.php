@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    use HasFactory;
+    protected $table = 'my_tasks';
+    protected $primaryKey = 'my_id';
+    public $incrementing = false;
+    public $timestamps = false; // means do not create created_at and updated_at columns
+
+    // set default values
+    protected $attributes = [
+        'name' => "Unset",
+    ];
 }

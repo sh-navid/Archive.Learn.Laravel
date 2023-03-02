@@ -10,7 +10,7 @@
 - [CSRF](topic/CSRF.md)
 - ** [Controller](topic/Controller.md)
 - ** [Model](topic/Model.md)
-- Migration
+- ** [Migration](topic/Migration.md)
 - ** [Blade](topic/Blade.md)
 - ** [Database](topic/DATABASE.md)
 - ** [Basic Auth](topic/AUTH.md)
