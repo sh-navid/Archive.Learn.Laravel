@@ -5,6 +5,10 @@
 
     <p>{{ Session::get('msg')??"" }}</p>
 
+    <a href="{{ route('tasks.create') }}">New</a>
+    
+    <hr/>
+
     @foreach ($tasks as $task)
         <h3>{{$task->title}}</h3>    
 

@@ -9,7 +9,7 @@
             Schema::create('tasks', function (Blueprint $table) {
                 $table->increments("id"); // ->id()
                 $table->string("title");
-                $table->boolean("is_done");
+                $table->boolean("is_done")->default(false);
                 $table->timestamps();
             });
         }

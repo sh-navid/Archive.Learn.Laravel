@@ -24,7 +24,8 @@ class TaskController extends Controller
     // Store a newly created resource in storage.
     public function store(Request $request)
     {
-        //
+        Task::create($request->all());
+        return redirect()->route("tasks.index")->with("msg", "Task Created");
     }
 
     // Display the specified resource.
