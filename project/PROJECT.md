@@ -50,7 +50,7 @@
 - `php artisan make:controller TaskController --resource --model=Task`
 - Append this to `web.php`
     - `Route::resource("/tasks",TaskController::class);`
-- Make
+- Make Layout
     - `resources/views/users/layout.blade.php`
     - ~~~php
         <html>
@@ -66,7 +66,7 @@
         </body>
         </html>
       ~~~
-- Make
+- Make Index
     - Task Controller Index
         - ~~~php
             public function index()
@@ -109,7 +109,7 @@
                 @endforeach
             @endsection
           ~~~
-- Make
+- Make Create
     - Task Controller Create
         - ~~~php
             public function create()
@@ -137,7 +137,7 @@
                 </form>
             @endsection
           ~~~
-- Make
+- Make Edit
     - Task Controller Edit
         - ~~~php
             public function edit(Task $task)
@@ -170,7 +170,7 @@
                 </form>
             @endsection
           ~~~
-- Make
+- Make Show
     - Task Controller Show
         - ~~~php
             public function show(Task $task)
