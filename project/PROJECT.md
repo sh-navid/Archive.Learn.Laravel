@@ -67,7 +67,7 @@
         </html>
       ~~~
 - Make
-    - Task Controller
+    - Task Controller Index
         - ~~~php
             public function index()
             {
@@ -110,7 +110,7 @@
             @endsection
           ~~~
 - Make
-    - Task Controller
+    - Task Controller Create
         - ~~~php
             public function create()
             {
@@ -138,7 +138,7 @@
             @endsection
           ~~~
 - Make
-    - Task Controller
+    - Task Controller Edit
         - ~~~php
             public function edit(Task $task)
             {
@@ -171,7 +171,7 @@
             @endsection
           ~~~
 - Make
-    - Task Controller
+    - Task Controller Show
         - ~~~php
             public function show(Task $task)
             {
