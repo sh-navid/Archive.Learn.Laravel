@@ -1,4 +1,4 @@
-@extends('task.layout')
+@extends('tasks.layout')
 
 @section('content')
     <h1>CREATE VIEW</h1>

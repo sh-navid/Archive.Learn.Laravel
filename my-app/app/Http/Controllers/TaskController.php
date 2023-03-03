@@ -12,13 +12,14 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::latest()->paginate(20);
-        return $tasks;
+        //return $tasks;
+        return view("tasks.index");
     }
 
     // Show the form for creating a new resource.
     public function create()
     {
-        return view("task.create");
+        return view("tasks.create");
     }
 
     /**
