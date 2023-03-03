@@ -7,24 +7,18 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Display a listing of the resource.
+    // http://127.0.0.1:8000/task
     public function index()
     {
-        //
+        $tasks = Task::latest()->paginate(20);
+        return $tasks;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Show the form for creating a new resource.
     public function create()
     {
-        //
+        return view("task.create");
     }
 
     /**

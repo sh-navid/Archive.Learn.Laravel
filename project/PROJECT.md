@@ -36,3 +36,41 @@
   ~~~
 - `php artisan db:seed --class=TaskSeeder`
 - `php artisan make:controller TaskController --resource --model=Task`
+- Append this to `web.php`
+    - `Route::resource("/task",TaskController::class);`
+- Make
+    - `resources/views/users/layout.blade.php`
+    - ~~~php
+        <html>
+        <head>
+            <title>Task Manager Application</title>
+        </head>
+        <body>
+        
+        <div class="container">
+            @yield('content')
+        </div>
+        
+        </body>
+        </html>
+      ~~~
+- Make
+    - `resources/views/users/create.blade.php`
+    - ~~~php
+     
+      ~~~
+- Make
+    - `resources/views/users/edit.blade.php`
+    - ~~~php
+     
+      ~~~
+- Make
+    - `resources/views/users/index.blade.php`
+    - ~~~php
+     
+      ~~~
+- Make
+    - `resources/views/users/show.blade.php`
+    - ~~~php
+     
+      ~~~
