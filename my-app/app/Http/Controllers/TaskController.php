@@ -12,7 +12,7 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        return view("tasks.index",compact('tasks'));
+        return view("tasks.index", compact('tasks'));
     }
 
     // Show the form for creating a new resource.
@@ -21,55 +21,38 @@ class TaskController extends Controller
         return view("tasks.create");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Store a newly created resource in storage.
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Task  $task
-     * @return \Illuminate\Http\Response
-     */
+    // Display the specified resource.
     public function show(Task $task)
     {
-        //
+        return view("tasks.show", compact("task"));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Task  $task
-     * @return \Illuminate\Http\Response
-     */
+    // Show the form for editing the specified resource.
     public function edit(Task $task)
     {
-        //
+        return view("tasks.edit", compact("task"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Task  $task
-     * @return \Illuminate\Http\Response
-     */
+    // Update the specified resource in storage.
     public function update(Request $request, Task $task)
     {
-        //
+        //return $request->all();
+        $request["is_done"] = $request["is_done"] == "on" ? 1 : 0;
+        $task->update($request->all());
+        return redirect()->route("tasks.index")->with("msg", "Task Updated");
     }
 
     // Remove the specified resource from storage.
     public function destroy(Task $task)
     {
-        Task::destroy($task->id);
-        return redirect()->route("tasks.index")->with("msg","User Removed");
+        // Task::destroy($task->id);
+        $task->delete();
+        return redirect()->route("tasks.index")->with("msg", "Task Removed");
     }
 }

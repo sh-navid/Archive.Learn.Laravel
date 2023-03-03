@@ -22,18 +22,30 @@
   ~~~
 - `php artisan migrate`
 - `php artisan make:model Task`
-- `php artisan make:seeder TaskSeeder`
-- ~~~php
-    class TaskSeeder extends Seeder
-    {
-        public function run()
+    - ~~~php
+        class Task extends Model
         {
-            Task::create(["title" => "Task 1", "is_done" => false]);
-            Task::create(["title" => "Task 2", "is_done" => false]);
-            Task::create(["title" => "Task 3", "is_done" => true]);
+            use HasFactory;
+
+            // To update columns
+            protected $fillable = [
+                'title',
+                'is_done'
+            ];
         }
-    }
-  ~~~
+      ~~~
+- `php artisan make:seeder TaskSeeder`
+    - ~~~php
+        class TaskSeeder extends Seeder
+        {
+            public function run()
+            {
+                Task::create(["title" => "Task 1", "is_done" => false]);
+                Task::create(["title" => "Task 2", "is_done" => false]);
+                Task::create(["title" => "Task 3", "is_done" => true]);
+            }
+        }
+    ~~~
 - `php artisan db:seed --class=TaskSeeder`
 - `php artisan make:controller TaskController --resource --model=Task`
 - Append this to `web.php`
