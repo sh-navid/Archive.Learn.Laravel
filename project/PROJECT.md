@@ -21,6 +21,7 @@
     };
   ~~~
 - `php artisan migrate`
+- `php artisan make:model Task`
 - `php artisan make:seeder TaskSeeder`
 - ~~~php
     class TaskSeeder extends Seeder
@@ -34,5 +35,4 @@
     }
   ~~~
 - `php artisan db:seed --class=TaskSeeder`
-- `php artisan make:model Task`
 - `php artisan make:controller TaskController --resource --model=Task`
