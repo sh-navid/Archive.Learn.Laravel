@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dictionary', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('word');
-            $table->string('trans');
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->increments("id");
+            $table->string("title");
+            $table->boolean("is_done");
             $table->timestamps();
-        });   
+        });
     }
 
     /**
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tasks');
     }
 };
