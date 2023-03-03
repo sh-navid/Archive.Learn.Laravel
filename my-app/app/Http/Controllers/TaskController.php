@@ -8,12 +8,11 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     // Display a listing of the resource.
-    // http://127.0.0.1:8000/task
+    // http://127.0.0.1:8000/tasks
     public function index()
     {
-        $tasks = Task::latest()->paginate(20);
-        //return $tasks;
-        return view("tasks.index");
+        $tasks = Task::all();
+        return view("tasks.index",compact('tasks'));
     }
 
     // Show the form for creating a new resource.
@@ -67,14 +66,10 @@ class TaskController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Task  $task
-     * @return \Illuminate\Http\Response
-     */
+    // Remove the specified resource from storage.
     public function destroy(Task $task)
     {
-        //
+        Task::destroy($task->id);
+        return redirect()->route("tasks.index")->with("msg","User Removed");
     }
 }

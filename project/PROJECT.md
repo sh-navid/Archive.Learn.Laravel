@@ -37,7 +37,7 @@
 - `php artisan db:seed --class=TaskSeeder`
 - `php artisan make:controller TaskController --resource --model=Task`
 - Append this to `web.php`
-    - `Route::resource("/task",TaskController::class);`
+    - `Route::resource("/tasks",TaskController::class);`
 - Make
     - `resources/views/users/layout.blade.php`
     - ~~~php
@@ -55,6 +55,19 @@
         </html>
       ~~~
 - Make
+    - Task Controller
+    - ~~~php
+        public function index()
+        {
+            $tasks = Task::all();
+            return view("tasks.index",compact('tasks'));
+        }
+      ~~~
+    - `resources/views/users/index.blade.php`
+    - ~~~php
+     
+      ~~~
+- Make
     - `resources/views/users/create.blade.php`
     - ~~~php
      
@@ -65,12 +78,9 @@
      
       ~~~
 - Make
-    - `resources/views/users/index.blade.php`
-    - ~~~php
-     
-      ~~~
-- Make
     - `resources/views/users/show.blade.php`
     - ~~~php
      
       ~~~
+- Finally
+    - Run `http://127.0.0.1:8000/tasks`

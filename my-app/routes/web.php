@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::resource("/task",TaskController::class);
+Route::resource("/tasks",TaskController::class);
 
 
 Route::get('/test/{name}', function ($name) {
