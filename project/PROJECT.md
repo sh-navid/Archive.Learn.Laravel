@@ -68,31 +68,43 @@
       ~~~
 - Make
     - Task Controller
-    - ~~~php
-        public function index()
-        {
-            $tasks = Task::all();
-            return view("tasks.index",compact('tasks'));
-        }
-      ~~~
+        - ~~~php
+            public function index()
+            {
+                $tasks = Task::all();
+                return view("tasks.index",compact('tasks'));
+            }
+        ~~~
     - `resources/views/users/index.blade.php`
-    - ~~~php
-     
-      ~~~
+        - ~~~php
+        
+          ~~~
 - Make
+    - Task Controller
+        - ~~~php
+
+          ~~~
     - `resources/views/users/create.blade.php`
-    - ~~~php
-     
-      ~~~
+        - ~~~php
+        
+          ~~~
 - Make
+    - Task Controller
+        - ~~~php
+
+          ~~~
     - `resources/views/users/edit.blade.php`
-    - ~~~php
-     
-      ~~~
+        - ~~~php
+        
+          ~~~
 - Make
+    - Task Controller
+        - ~~~php
+
+          ~~~
     - `resources/views/users/show.blade.php`
-    - ~~~php
-     
-      ~~~
+        - ~~~php
+        
+          ~~~
 - Finally
     - Run `http://127.0.0.1:8000/tasks`
