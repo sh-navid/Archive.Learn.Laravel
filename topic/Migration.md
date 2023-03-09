@@ -1,7 +1,6 @@
 # Laravel
 ## Migration
-
-
+***Disclaimer*: The content described in this repository are for educational purposes only.**
 
 ~~~php
 public function up()
