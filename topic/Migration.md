@@ -16,6 +16,14 @@ public function up()
 ~~~
 
 - `php artisan migrate`
+- `php artisan make:migration create_tasks_table`
+___
+- Make a new sql file in `schema/mysql-schema.sql` to renew all tables
+    - `php artisan schema:dump`
+- Previous process + Remove migration files
+    - `php artisan schema:dump --prune`
+
+- `php artisan migrate:status`
 
 
 
