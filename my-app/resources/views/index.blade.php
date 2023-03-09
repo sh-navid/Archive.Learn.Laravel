@@ -3,17 +3,24 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script>
-        const _=(action, method="GET", data=null)=>{
+        const _delete=(id)=>{
             $.ajax({
-                type: method,
-                url: action,
-                data: data,
-                headers: {
-                    'X-CSRF-TOKEN': '{{csrf_token()}}'
-                },
-                success:(data)=> {
-                    $("#msg").html(data.msg);
+                type: "DELETE",
+                url: "/comments/" + id,
+                headers: {'X-CSRF-TOKEN': '{{csrf_token()}}'},
+                success:()=> {
+                    $("#comment-" + id).remove();
                 }
+            });
+        }
+
+        const _update=(el,id)=>{
+            $.ajax({
+                type: "PUT",
+                url: "/comments/" + id,
+                data:{'content': $(el).text()},
+                headers: {'X-CSRF-TOKEN': '{{csrf_token()}}'},
+                success:()=> {}
             });
         }
     </script>
@@ -21,11 +28,13 @@
 <body>
     <h1>Comments</h1>
     @foreach ($comments as $comment)
-        {{$comment->email}}
-        <br/>
-        <button onclick="_('/comments/{{$comment->id}}','DELETE')">X</button>
-        {{$comment->content}}
-        <hr/>
+        <div id="comment-{{$comment->id}}">
+            {{$comment->email}}
+            <br/>
+            <button onclick="_delete('{{$comment->id}}')">X</button>
+            <div contenteditable="true" onkeyup="_update(this,'{{$comment->id}}')">{{$comment->content}}</div>
+            <hr/>
+        </div>
     @endforeach
 
     <form action="/comments" method="post">
