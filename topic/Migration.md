@@ -24,6 +24,7 @@ ___
     - `php artisan schema:dump --prune`
 
 - `php artisan migrate:status`
+- `php artisan migrate:rollback`
 
 
 
