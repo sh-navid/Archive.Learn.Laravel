@@ -28,6 +28,11 @@ ___
 - Then call rollback
     - `php artisan migrate:rollback`
     - And aftr calling `rollback` then call `status` again
+    - `php artisan migrate:rollback --step=3`
+- Rollback and migrate
+    - `php artisan migrate:refresh --seed`
+- Drop and migrate
+    - `php artisan migrate:fresh --seed`
 
 
 
