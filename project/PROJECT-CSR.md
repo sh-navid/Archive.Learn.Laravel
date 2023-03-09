@@ -16,6 +16,17 @@
 - `php artisan migrate`
 - `php artisan migrate:status`
 - `php artisan make:model Comment`
+- ~~~php
+    class Comment extends Model
+    {
+        use HasFactory;
+
+        protected $fillable=[
+            "email",
+            "content"
+        ];
+    }
+  ~~~
 - `php artisan make:seeder CommentSeeder`
 - ~~~php
     public function run()

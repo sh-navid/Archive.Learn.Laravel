@@ -13,14 +13,10 @@ class CommentController extends Controller
         return view("index", compact("comments"));
     }
 
-    public function create()
-    {
-        // return view
-    }
-
     public function store(Request $request)
     {
-        return Comment::create($request->all());
+        Comment::create($request->all());
+        return redirect()->route("comments.index");
     }
 
     public function show(Comment $comment)
