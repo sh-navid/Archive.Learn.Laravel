@@ -19,23 +19,15 @@ class CommentController extends Controller
         return redirect()->route("comments.index");
     }
 
-    public function show(Comment $comment)
-    {
-        // return view
-    }
-
-    public function edit(Comment $comment)
-    {
-        // return view
-    }
-
     public function update(Request $request, Comment $comment)
     {
-        return $comment->update($request->all());
+        $comment->update($request->all());
     }
 
     public function destroy(Comment $comment)
     {
-        return $comment->delete();
+        $id = $comment->id;
+        $comment->delete();
+        return $id;
     }
 }
