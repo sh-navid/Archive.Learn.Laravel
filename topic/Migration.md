@@ -23,8 +23,11 @@ ___
 - Previous process + Remove migration files
     - `php artisan schema:dump --prune`
 
-- `php artisan migrate:status`
-- `php artisan migrate:rollback`
+- Call this command
+    - `php artisan migrate:status`
+- Then call rollback
+    - `php artisan migrate:rollback`
+    - And aftr calling `rollback` then call `status` again
 
 
 
