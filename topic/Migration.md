@@ -22,11 +22,11 @@ ___
 - Previous process + Remove migration files
     - `php artisan schema:dump --prune`
 
-- Call this command
+- Status
     - `php artisan migrate:status`
-- Then call rollback
+- Rollback
     - `php artisan migrate:rollback`
-    - And aftr calling `rollback` then call `status` again
+    - And after calling `rollback` then call `status` again
     - `php artisan migrate:rollback --step=3`
 - Rollback and migrate
     - `php artisan migrate:refresh --seed`
@@ -40,6 +40,28 @@ ___
 - Drop
     - `Schema::drop('tasks')`
     - `Schema::dropIfExists('tasks');`
+- Update table
+    - `php artisan make:migration create_maps_table`
+    - ~~~php
+        Schema::create('maps', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
+      ~~~
+    - `php artisan migrate:status`
+    - `php artisan migrate`
+    - `php artisan make:migration update_maps_table`
+    - ~~~php
+        Schema::table('maps', function (Blueprint $table) {
+            $table->string("my_col");
+        });
+      ~~~
+    - `php artisan migrate:status`
+    - `php artisan migrate`
+    - Other than `string` type we have many more types like
+        - `float`, `integer`, `boolean`, `char`, `date`, `decimal`, `double`, `enum`
+        - `foreignId`, `foreignIdFor`, `foreignUuid`
+        - `ipAddress`, `json`, `set`, `uuid`, `time`, `text`, ...
 
 
 
