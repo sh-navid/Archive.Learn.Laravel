@@ -60,8 +60,11 @@ ___
     - `php artisan migrate`
     - Other than `string` type we have many more types like
         - `float`, `integer`, `boolean`, `char`, `date`, `decimal`, `double`, `enum`
+        - `increments`
         - `foreignId`, `foreignIdFor`, `foreignUuid`
         - `ipAddress`, `json`, `set`, `uuid`, `time`, `text`, ...
+        - `$table->enum('gender', ['m', 'f']);`
+        - `$table->set('colors', ['grren', 'blue']);`
 
 
 
