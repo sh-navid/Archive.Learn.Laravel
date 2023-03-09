@@ -1,5 +1,5 @@
 # Laravel
-## CSR Project
+## SSR+CSR Project
 - `php artisan make:migration create_comments_table --create comments`
 - ~~~php
     public function up()

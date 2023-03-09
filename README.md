@@ -23,4 +23,4 @@
     >> For session securing and encrypted data keys
 - `return Redirect::to('login');`
 - ** [SSR Project](project/PROJECT.md)
-- ** [CSR Project](project/PROJECT-CSR.md)
+- ** [SSR + CSR Project](project/PROJECT-CSR.md)
