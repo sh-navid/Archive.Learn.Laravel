@@ -33,6 +33,14 @@ ___
     - `php artisan migrate:refresh --seed`
 - Drop and migrate
     - `php artisan migrate:fresh --seed`
+- Check
+    - `Schema::hasTable('tasks')`
+    - `Schema::hasColumn('tasks', 'id')`
+- Rename table
+    - `Schema::rename('tasks', 'our_tasks')`
+- Drop
+    - `Schema::drop('tasks')`
+    - `Schema::dropIfExists('tasks');`
 
 
 
