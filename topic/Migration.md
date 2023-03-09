@@ -62,9 +62,22 @@ ___
         - `float`, `integer`, `boolean`, `char`, `date`, `decimal`, `double`, `enum`
         - `increments`
         - `foreignId`, `foreignIdFor`, `foreignUuid`
-        - `ipAddress`, `json`, `set`, `uuid`, `time`, `text`, ...
+        - `ipAddress`, `json`, `set`, `uuid`, `time`, `text`, `timestamp`, ...
+        - `$table->uuid('id');`
         - `$table->enum('gender', ['m', 'f']);`
         - `$table->set('colors', ['grren', 'blue']);`
+    - Modifiers
+        - `$table->string('name')->nullable();`
+        - `$table->string('name')->default('something');`
+        Place
+            - `->first()`
+            - `->after('col')` to place a column after another column
+        - `->increments("id")->from(100)`
+        - `->autoIncrement()`
+        - `->invisible()` to `select *`
+        - `->unsigned()`
+        - `->useCurrent()` set current TIME_STAMP
+        - `->useCurrentOnUpdate()`
 
 
 
