@@ -13,20 +13,96 @@
 ~~~php
 namespace App;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
  
 class Task extends Model
 {
     protected $table = 'my_tasks';
     protected $primaryKey = 'my_id';
     public $incrementing = false;
-    public $timestamps = false; // means do not create created_at and updated_at columns
+
+    // means do not create created_at and updated_at columns
+    public $timestamps = false; 
+    // Also to change format of timestamps
+    protected $dateFormat = 'U';
+
 
     // set default values
     protected $attributes = [
         'name' => "Unset",
     ];
+
+    // If your primary key is not integer
+    // You should define its type like this
+    protected $keyType = 'string';
+
+
+    // Use this if you want to have UUID instead of id
+    // Then just create a simple record without defining or passing an id
+    // Just check the record id after creating it
+    use HasUuids; // 32 chars
+    // or
+    use HasUlids; // 26 chars
 }
 ~~~
+
+- Retrieve
+    - ~~~php
+        foreach (Task::all() as $task) {
+            echo $task->title;
+        }
+      ~~~
+- Query
+    - ~~~php
+        $tasks = Task::where('is_done', 1)
+                        ->orderBy('title')
+                        ->take(5)
+                        ->get();
+
+
+        $tasks = Task::where('is_done', 1)->get();
+
+
+        $task = Task::where('is_done', 1)->first();
+        $task->title="new title";
+        $task->refresh();
+        echo $task->title; // Old Title
+
+
+        $tasks = Task::cursor()->filter(function (Task $task) {
+            return $task->id < 10;
+        });
+        
+        foreach ($tasks as $task) {
+            echo $task->title;
+        }
+
+
+        // Find a model with primary key
+        $task = Task::find(1);
+
+
+        $task = Task::findOr(10, function () {});
+
+
+        $task = Task::findOrFail(1);
+        
+
+        $task = Task::where('id', '<', 3)->firstOr(function () {});
+
+
+
+        // Create in DB? if not exists
+        $task = Task::firstOrCreate([
+            'id' => 10
+        ]);
+
+
+        // Create instance if not exists
+        $task = Task::firstOrNew([
+            'id' => 10
+        ]);
+      ~~~
 
 
 
