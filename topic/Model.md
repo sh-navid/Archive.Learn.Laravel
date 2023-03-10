@@ -90,6 +90,8 @@ class Task extends Model
 
         $task = Task::where('id', '<', 3)->firstOr(function () {});
 
+        
+        $task = Task::where('id', '<', 3)->count();
 
 
         // Create in DB? if not exists
@@ -102,6 +104,13 @@ class Task extends Model
         $task = Task::firstOrNew([
             'id' => 10
         ]);
+
+
+
+        // Update model
+        $task = Flight::find(1);
+        $task->title = 'Hello';
+        $task->save();
       ~~~
 
 
