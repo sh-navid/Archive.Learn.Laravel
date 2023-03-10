@@ -130,6 +130,10 @@ ___
         - ~~~php
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
           ~~~
+        - Other options
+            - `$table->cascadeOnUpdate();`, `$table->restrictOnUpdate();`, `$table->cascadeOnDelete();`, `$table->restrictOnDelete();`, `$table->nullOnDelete();`
+    - Drop
+        - `$table->dropForeign('color_id');`
 
 
 - Read more
