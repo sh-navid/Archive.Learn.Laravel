@@ -121,6 +121,15 @@ ___
             $table->foreign('color_id')->references('id')->on('colors');
         });   
       ~~~
+    - We can change
+        - `$table->unsignedBigInteger('color_id');`
+        - `$table->foreign('color_id')->references('id')->on('colors');`
+    - to
+        - `$table->foreignId('color_id')->constrained('colors');`
+    - And also
+        - ~~~php
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+          ~~~
 
 
 - Read more
