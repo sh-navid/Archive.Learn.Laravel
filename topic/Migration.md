@@ -99,13 +99,28 @@ ___
     - `$table->dropTimestamps();`
 - Index
     - `$table->string('title')->unique();` or `$table->unique('title');`
+        - `$table->dropUnique('title');`
     - Compund Index
         - `$table->index(['col1', 'col2']);`
-        - `$table->unique('col1', 'col2');` ????
+            - `$table->dropIndex('something_index');`
     - Primary Key
         - `$table->primary('id');`
+            - `$table->dropPrimary('id');`
         - `$table->primary(['col1', 'col2']);`
-`
+    - Rename Index
+        - `$table->renameIndex('from', 'to');`
+- Foreign Key Constraints
+    - ~~~php
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->boolean('is_done');
+            $table->timestamps();
+
+            $table->unsignedBigInteger('color_id');
+            $table->foreign('color_id')->references('id')->on('colors');
+        });   
+      ~~~
 
 
 - Read more
