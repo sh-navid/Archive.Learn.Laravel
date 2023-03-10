@@ -5,10 +5,10 @@
 ~~~php
 public function up()
 {
-    Schema::create('dictionary', function (Blueprint $table) {
+    Schema::create('tasks', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('word');
-        $table->string('trans');
+        $table->string('title');
+        $table->boolean('is_done');
         $table->timestamps();
     });   
 }
@@ -78,7 +78,34 @@ ___
         - `->unsigned()`
         - `->useCurrent()` set current TIME_STAMP
         - `->useCurrentOnUpdate()`
-
+- Change Column
+    - ~~~php
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->string('title', 100)->change();
+        });
+    ~~~
+- Rename Column
+    - ~~~php
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->renameColumn('title', 'my_title');
+        });
+    ~~~
+- Drop Column
+    - ~~~php
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->dropColumn('title');
+        });
+    ~~~
+    - `$table->dropTimestamps();`
+- Index
+    - `$table->string('title')->unique();` or `$table->unique('title');`
+    - Compund Index
+        - `$table->index(['col1', 'col2']);`
+        - `$table->unique('col1', 'col2');` ????
+    - Primary Key
+        - `$table->primary('id');`
+        - `$table->primary(['col1', 'col2']);`
+`
 
 
 - Read more
