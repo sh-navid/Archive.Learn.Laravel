@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\MyAuthController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,14 @@ Route::get('/upload', function () {
 });
 
 Route::post('/upload', [UploadController::class, "uploadFile"]);
+
+
+
+Route::view('login',     'login');
+Route::view('register',  'register');
+
+Route::get('dashboard',  [MyAuthController::class, 'dashboard']);
+Route::get('logout',     [MyAuthController::class, 'logout']);
+
+Route::post('login',     [MyAuthController::class, 'login']);
+Route::post('register',  [MyAuthController::class, 'register']);

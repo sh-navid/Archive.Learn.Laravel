@@ -26,3 +26,5 @@
 - [SSR + CSR Project](project/PROJECT-CSR.md)
 ---
 - [File Upload](project/FILE-UPLOAD.md)
+- Send Email
+- [Authentication](project/AUTH.md)
