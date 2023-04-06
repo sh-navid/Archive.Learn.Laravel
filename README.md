@@ -27,4 +27,4 @@
 ---
 - [File Upload](project/FILE-UPLOAD.md)
 - Send Email
-- [Authentication](project/AUTH.md)
+- [Authentication, Validator](project/AUTH.md)

@@ -1,5 +1,5 @@
 # Laravel
-## Auth
+## Auth and Validator
 - `php artisan make:controller MyAuthController`
     - ~~~php
         <?php
