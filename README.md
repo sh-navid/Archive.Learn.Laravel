@@ -22,5 +22,7 @@
 - ** `php artisan key:generate`
     >> For session securing and encrypted data keys
 - `return Redirect::to('login');`
-- ** [SSR Project](project/PROJECT.md)
-- ** [SSR + CSR Project](project/PROJECT-CSR.md)
+- [SSR Project](project/PROJECT.md)
+- [SSR + CSR Project](project/PROJECT-CSR.md)
+---
+- [File Upload](project/FILE-UPLOAD.md)
