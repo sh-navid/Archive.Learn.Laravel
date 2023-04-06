@@ -7,29 +7,36 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class MyAuthController extends Controller
 {
     public function login(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'email' => 'required',
             'password' => 'required',
         ]);
 
-        if (Auth::attempt($request->only('email', 'password')))
-            return redirect('dashboard')->with('msg','You are logged in');
+        if ($validator->fails())
+            return redirect("login")->with('msg', 'Validation Error');
 
-        return redirect("login")->withSuccess('Invalid login data');
+        if (Auth::attempt($request->only('email', 'password')))
+            return redirect('dashboard')->with('msg', 'You are logged in');
+
+        return redirect("login")->with('msg', 'Invalid login data');
     }
 
     public function register(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|min:6'
         ]);
+
+        if ($validator->fails())
+            return redirect("register")->with('msg', 'Validation Error');
 
         $data = $request->all();
         User::create([
@@ -38,7 +45,7 @@ class MyAuthController extends Controller
             'password' => Hash::make($data['password'])
         ]);
 
-        return redirect("dashboard")->with('msg','You are registered');
+        return redirect("register")->with('msg', 'You are registered');
     }
 
     public function dashboard()
