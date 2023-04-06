@@ -45,7 +45,7 @@ class MyAuthController extends Controller
             'password' => Hash::make($data['password'])
         ]);
 
-        return redirect("register")->with('msg', 'You are registered');
+        return redirect("dashboard")->with('msg', 'You are registered');
     }
 
     public function dashboard()
@@ -60,6 +60,6 @@ class MyAuthController extends Controller
     {
         Session::flush();
         Auth::logout();
-        return Redirect('login');
+        return Redirect('dashboard');
     }
 }
