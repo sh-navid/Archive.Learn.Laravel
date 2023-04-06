@@ -28,3 +28,4 @@
 - [File Upload](project/FILE-UPLOAD.md)
 - Send Email
 - [Authentication, Validator](project/AUTH.md)
+- [Ajax](project/AJAX.md)

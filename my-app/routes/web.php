@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MyAuthController;
 use App\Http\Controllers\TaskController;
@@ -38,3 +39,8 @@ Route::get('logout',     [MyAuthController::class, 'logout']);
 
 Route::post('login',     [MyAuthController::class, 'login']);
 Route::post('register',  [MyAuthController::class, 'register']);
+
+
+
+Route::view('/ajax',    'ajax');
+Route::post('/ajaxcall', [AjaxController::class, 'call']);
