@@ -26,6 +26,8 @@
 - [SSR + CSR Project](project/PROJECT-CSR.md)
 ---
 - [File Upload](project/FILE-UPLOAD.md)
-- Send Email
 - [Authentication, Validator](project/AUTH.md)
+- Send Email
+- [Cookie](topic/COOKIE.md)
 - [Ajax](project/AJAX.md)
+- [Eloquent](topic/Eloquent.md)
