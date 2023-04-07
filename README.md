@@ -27,7 +27,9 @@
 ---
 - [File Upload](project/FILE-UPLOAD.md)
 - [Authentication, Validator](project/AUTH.md)
+---
 - Send Email
 - [Cookie](topic/COOKIE.md)
 - [Ajax](project/AJAX.md)
+- [CustomCommand](topic/COMMAND.md)
 - [Eloquent](topic/Eloquent.md)
