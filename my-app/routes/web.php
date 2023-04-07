@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CookieController;
 use App\Http\Controllers\MyAuthController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UploadController;
@@ -44,3 +45,9 @@ Route::post('register',  [MyAuthController::class, 'register']);
 
 Route::view('/ajax',    'ajax');
 Route::post('/ajaxcall', [AjaxController::class, 'call']);
+
+
+
+Route::get('/set-cookie',  [CookieController::class, 'create']);
+Route::get('/get-cookie',  [CookieController::class, 'read']);
+Route::get('/del-cookie',  [CookieController::class, 'delete']);
