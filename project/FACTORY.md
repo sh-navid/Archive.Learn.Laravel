@@ -14,4 +14,38 @@
             }
         ~~~
 - `php artisan migrate`
-- `php artisan make:factory CakeFactory`
+- `php artisan make:factory cakeFactory --model=Cake`
+- Go to `database/factories/CakeFactory.php`
+    - ~~~php
+        class cakeFactory extends Factory
+        {
+            public function definition()
+            {
+                return [
+                    'name' => $this->faker->unique()->word(),
+                    'price' => $this->faker->numberBetween(1000, 3000)
+                ];
+            }
+        }
+      ~~~
+- `php artisan make:command cakeCommand`
+- Go to `app/Console/Commands/cakeCommand.php`
+    - ~~~php
+        use App\Models\Cake;
+        use Illuminate\Console\Command;
+
+        class cakeCommand extends Command
+        {
+            protected $signature = 'create:cake {number}';
+
+            protected $description = 'To make fake users';
+
+            public function handle()
+            {
+                $number = $this->argument("number");
+                Cake::factory()->count($number)->make();
+                return Command::SUCCESS;
+            }
+        }
+      ~~~
+- `php artisan create:cake 10`

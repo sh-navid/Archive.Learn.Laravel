@@ -33,7 +33,7 @@
 ---
 - [Cookie](topic/COOKIE.md)
 - [Ajax](project/AJAX.md)
-- [Factory](project/FACTORY.md)
+- [Factory, Faker](project/FACTORY.md)
 - [CustomCommand](topic/COMMAND.md)
 - [SocketIO](project/Socket/SOCKET.md)
 - Composer
