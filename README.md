@@ -29,9 +29,11 @@
 - [Authentication, Validator](project/AUTH.md)
 ---
 - Send Email
+- [Eloquent](topic/Eloquent.md)
+---
 - [Cookie](topic/COOKIE.md)
 - [Ajax](project/AJAX.md)
 - [CustomCommand](topic/COMMAND.md)
-- [Eloquent](topic/Eloquent.md)
+- [SocketIO](project/Socket/SOCKET.md)
 - Composer
     - [milon/barcode](composer/MILON-BARCODE.md)
