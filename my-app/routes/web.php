@@ -51,3 +51,6 @@ Route::post('/ajaxcall', [AjaxController::class, 'call']);
 Route::get('/set-cookie',  [CookieController::class, 'create']);
 Route::get('/get-cookie',  [CookieController::class, 'read']);
 Route::get('/del-cookie',  [CookieController::class, 'delete']);
+
+
+Route::view('/barcode',  "barcode");

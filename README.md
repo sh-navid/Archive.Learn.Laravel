@@ -33,3 +33,5 @@
 - [Ajax](project/AJAX.md)
 - [CustomCommand](topic/COMMAND.md)
 - [Eloquent](topic/Eloquent.md)
+- Composer
+    - [milon/barcode](composer/MILON-BARCODE.md)
