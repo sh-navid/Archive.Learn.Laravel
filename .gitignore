@@ -1,1 +1,3 @@
 my-app/composer.lock
+package-lock.json
+node_modules
