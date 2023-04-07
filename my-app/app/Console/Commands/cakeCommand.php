@@ -14,7 +14,7 @@ class cakeCommand extends Command
     public function handle()
     {
         $number = $this->argument("number");
-        Cake::factory()->count($number)->make();
+        Cake::factory()->count($number)->create();
         return Command::SUCCESS;
     }
 }

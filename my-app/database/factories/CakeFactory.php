@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cake>
  */
-class cakeFactory extends Factory
+class CakeFactory extends Factory
 {
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->word(),
-            'price' => $this->faker->numberBetween(1000, 3000)
+            'name' => fake()->unique()->word(),
+            'price' => fake()->numberBetween(1000, 3000)
         ];
     }
 }

@@ -14,10 +14,10 @@
             }
         ~~~
 - `php artisan migrate`
-- `php artisan make:factory cakeFactory --model=Cake`
+- `php artisan make:factory CakeFactory --model=Cake`
 - Go to `database/factories/CakeFactory.php`
     - ~~~php
-        class cakeFactory extends Factory
+        class CakeFactory extends Factory
         {
             public function definition()
             {
@@ -43,7 +43,7 @@
             public function handle()
             {
                 $number = $this->argument("number");
-                Cake::factory()->count($number)->make();
+                Cake::factory()->count($number)->create();
                 return Command::SUCCESS;
             }
         }
