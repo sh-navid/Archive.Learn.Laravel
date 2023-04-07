@@ -54,3 +54,4 @@ Route::get('/del-cookie',  [CookieController::class, 'delete']);
 
 
 Route::view('/barcode',  "barcode");
+Route::view('/hihi',  "socket");
