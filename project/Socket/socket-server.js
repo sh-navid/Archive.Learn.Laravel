@@ -15,7 +15,7 @@ io.on('connection', async socket => {
     console.log('A client connected');
 
     socket.on('hi', async json => {
-        // io.to(socket.id).emit('hey', "Hello to all");
+        // io.to(socket.id).emit('hey', "Hello to caller");
         io.emit('hey', "Hello to all");
     })
 })
