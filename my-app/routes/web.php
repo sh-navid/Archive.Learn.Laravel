@@ -3,6 +3,7 @@
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\JoinController;
 use App\Http\Controllers\MyAuthController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UploadController;
@@ -55,3 +56,6 @@ Route::get('/del-cookie',  [CookieController::class, 'delete']);
 
 Route::view('/barcode',  "barcode");
 Route::view('/hihi',  "socket");
+
+Route::get('/join',  [JoinController::class,'join']);
+Route::get('/where',  [JoinController::class,'where']);

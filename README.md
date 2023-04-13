@@ -8,12 +8,10 @@
 - [Maintenance](topic/MAINTENANCE.md)
 - [Routes](topic/ROUTE.md)
 - [CSRF](topic/CSRF.md)
-- ** [Controller](topic/Controller.md)
+- [Controller](topic/Controller.md)
 - ** [Model](topic/Model.md)
 - ** [Migration](topic/Migration.md)
 - ** [Blade](topic/Blade.md)
-- ** [Database](topic/DATABASE.md)
-- ** [Basic Auth](topic/AUTH.md)
 - ** Make extra directories
     - `make:job`
     - `make:mail`
@@ -24,13 +22,9 @@
 - `return Redirect::to('login');`
 - [SSR Project](project/PROJECT.md)
 - [SSR + CSR Project](project/PROJECT-CSR.md)
----
 - [File Upload](project/FILE-UPLOAD.md)
 - [Authentication, Validator](project/AUTH.md)
----
 - Send Email
-- [Eloquent](topic/Eloquent.md)
----
 - [Cookie](topic/COOKIE.md)
 - [Ajax](project/AJAX.md)
 - [Factory, Faker](project/FACTORY.md)
@@ -38,3 +32,7 @@
 - [SocketIO](project/Socket/SOCKET.md)
 - Composer
     - [milon/barcode](composer/MILON-BARCODE.md)
+---
+- [Eloquent](topic/Eloquent.md)
+- [Database](topic/DATABASE.md)
+- [Basic Auth](topic/AUTH.md)
