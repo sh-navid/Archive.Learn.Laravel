@@ -1,6 +1,8 @@
 <?php
 
-use GuzzleHttp\Psr7\Request;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,11 @@ Route::get('/', function () {
 });
 
 Route::view("/register", "register");
-Route::post("/register", function (Request $r) {
-    
+Route::post("/register", function (Request $request) {
+    $request["password"] = Hash::make($request['password']);
+
+    $result = User::create($request);
+
+    return $result;
+    //return redirect("dashboard")->with('msg', 'You are registered');
 });
