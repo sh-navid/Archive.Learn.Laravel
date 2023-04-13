@@ -23,7 +23,6 @@
 - [SSR Project](project/PROJECT.md)
 - [SSR + CSR Project](project/PROJECT-CSR.md)
 - [File Upload](project/FILE-UPLOAD.md)
-- [Authentication, Validator](project/AUTH.md)
 - Send Email
 - [Cookie](topic/COOKIE.md)
 - [Ajax](project/AJAX.md)
@@ -36,3 +35,6 @@
 - [Eloquent](topic/Eloquent.md)
 - [Database](topic/DATABASE.md)
 - [Basic Auth](topic/AUTH.md)
+- [Authentication, Validator](project/AUTH.md)
+- [Laravel + SocketIO Game]()
+- [Candy Market]()

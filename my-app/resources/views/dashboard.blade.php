@@ -11,6 +11,8 @@
         <a href="/register">Register</a>
     @else
         Admin
+        {{Auth::user()}}
+        {{Auth::id()}}
         <br/>
         <a href="/logout">Logout</a>
     @endguest

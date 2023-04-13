@@ -179,3 +179,19 @@
             }
         }
       ~~~
+- We can also access to user data from `Auth` in view
+    - ~~~php
+        @guest
+            Guest
+            <br/>
+            <a href="/login">Login</a>
+            <br/>
+            <a href="/register">Register</a>
+        @else
+            Admin
+            {{Auth::user()}}
+            {{Auth::id()}}
+            <br/>
+            <a href="/logout">Logout</a>
+        @endguest
+      ~~~
