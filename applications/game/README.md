@@ -123,6 +123,10 @@
       ~~~
 - Make a route for gameboard in `web.php`
     - ~~~php
-
+        Route::get("/gameboard", function () {
+            if (Auth::check())
+                return view('gameboard');
+            return redirect("login");
+        });
       ~~~
     

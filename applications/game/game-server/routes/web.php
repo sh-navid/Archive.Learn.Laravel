@@ -31,3 +31,9 @@ Route::post("/login", function (Request $request) {
         return redirect('gameboard');
     return redirect("login");
 });
+
+Route::get("/gameboard", function () {
+    if (Auth::check())
+        return view('gameboard');
+    return redirect("login");
+});
