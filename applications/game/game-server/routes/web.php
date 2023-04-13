@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,12 @@ Route::post("/login", function (Request $request) {
     if (Auth::attempt($request->only('name', 'password')))
         return redirect('gameboard');
     return redirect("login");
+});
+
+Route::get("/logout", function () {
+    Session::flush();
+    Auth::logout();
+    return Redirect('gameboard');
 });
 
 Route::get("/gameboard", function () {

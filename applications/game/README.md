@@ -110,12 +110,11 @@
       ~~~
 - Also make a route for logout in `web.php`
     - ~~~php
-        public function logout()
-        {
+        Route::get("/logout", function () {
             Session::flush();
             Auth::logout();
             return Redirect('gameboard');
-        }
+        });
       ~~~
 - Make `gameboard.blade.php` for register new user
     - ~~~php
