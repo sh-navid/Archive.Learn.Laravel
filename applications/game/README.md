@@ -1,5 +1,6 @@
 # Game Project
 ## Socket.IO
+- Redirect to `game-socket` folder
 - Make a file and call it `package.json`
     - ~~~json
         {
@@ -30,8 +31,8 @@
         });
       ~~~
 - Redirect to folder and run `npm install`
-    - run `npm install --save socket.io`
-    - run `npm install --save express`
+    - Run `npm install --save socket.io`
+    - Run `npm install --save express`
     - Now `package.json` should be changed to
         - ~~~js
             {
@@ -43,5 +44,7 @@
             }
             }
           ~~~~
-    - run `node server.js`
+    - Run `node server.js`
 ## Laravel
+- Go to root folder of project and make a laravel project
+    - `composer create-project laravel/laravel game-server`
