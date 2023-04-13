@@ -108,4 +108,21 @@
             return redirect("login");
         });
       ~~~
+- Also make a route for logout in `web.php`
+    - ~~~php
+        public function logout()
+        {
+            Session::flush();
+            Auth::logout();
+            return Redirect('gameboard');
+        }
+      ~~~
+- Make `gameboard.blade.php` for register new user
+    - ~~~php
+
+      ~~~
+- Make a route for gameboard in `web.php`
+    - ~~~php
+
+      ~~~
     
