@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
@@ -16,16 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::view("/register", "register");
 Route::post("/register", function (Request $request) {
     $request["password"] = Hash::make($request['password']);
+    User::create($request->all());
+    return redirect("login");
+});
 
-    $result = User::create($request);
-
-    return $result;
-    //return redirect("dashboard")->with('msg', 'You are registered');
+Route::view("/login", "login");
+Route::post("/login", function (Request $request) {
+    if (Auth::attempt($request->only('name', 'password')))
+        return redirect('gameboard');
+    return redirect("login");
 });
