@@ -9,8 +9,10 @@ const io = require("socket.io")(server, {
 
 
 let players=[]
+
 io.on("connection", async (socket) => {
   console.log("A user is connected");
+
   socket.on("update", async (json) => {
     console.log(json);
     players[json.id]=json.data
