@@ -33,3 +33,27 @@
         });
       ~~~
     - `php artisan migrate:fresh`
+- Make `register.blade.php`
+    - ~~~php
+
+      ~~~
+- Make `login.blade.php`
+    - ~~~php
+
+      ~~~
+- Make `create.blade.php`
+    - ~~~php
+
+      ~~~
+- Make `home.blade.php`
+    - ~~~php
+
+      ~~~
+- Make `dashboard.blade.php`
+    - ~~~php
+
+      ~~~
+- Make `shop-basket.blade.php`
+    - ~~~php
+
+      ~~~
