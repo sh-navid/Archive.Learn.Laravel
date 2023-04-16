@@ -37,4 +37,4 @@
 - [Basic Auth](topic/AUTH.md)
 - [Authentication, Validator](project/AUTH.md)
 - [Laravel + SocketIO Game](applications/game/README.md)
-- [Candy Market]()
+- [Candy Market](applications/candy-market/README.md)
