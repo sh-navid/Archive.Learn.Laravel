@@ -27,7 +27,7 @@
             $table->id();
             $table->string('phone')->unique();
             $table->string('password');
-            $table->integer('role'); // 1 = normal user, 2 = admin
+            $table->integer('role')->default(1); // 1 = normal user, 2 = admin
             $table->rememberToken();
             $table->timestamps();
         });
