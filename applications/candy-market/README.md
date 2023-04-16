@@ -41,7 +41,7 @@
     - ~~~php
 
       ~~~
-- Make `create.blade.php`
+- Make `create.blade.php` to create new candy post
     - ~~~php
 
       ~~~
@@ -53,7 +53,7 @@
     - ~~~php
 
       ~~~
-- Make `shop-basket.blade.php`
+- Make `basket.blade.php` as a shopping basket
     - ~~~php
 
       ~~~
