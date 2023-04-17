@@ -33,6 +33,29 @@
         });
       ~~~
     - `php artisan migrate:fresh`
+    - Also update `User` model like this:
+    - ~~~php
+        protected $fillable = [
+            'phone',
+            'password',
+            'role',
+        ];
+      ~~~
+- Create a command to seed a default admin user
+    - `php artisan make:command MakeAdminUser`
+    - ~~~php
+        class MakeAdminUser extends Command
+        {
+            protected $signature = 'make:admin-user';
+            protected $description = 'To make default admin user';
+
+            public function handle()
+            {
+                User::create(["phone" => "123", "password" => Hash::make("123"), "role" => "2"]);
+            }
+        }
+      ~~~
+    - `php artisan make:admin-user`
 - Make `register.blade.php`
     - ~~~php
         <form action="/register" method="POST">
