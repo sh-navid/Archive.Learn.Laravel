@@ -7,6 +7,11 @@
     <title>Candy Market Login User</title>
 </head>
 <body>
-    
+    <form action="/login" method="POST">
+        @csrf
+        <input type="text" name="phone" placeholder="Phone" required/>
+        <input type="password" name="password" placeholder="Password" required/>
+        <input type="submit" value="Login">
+    </form>
 </body>
 </html>

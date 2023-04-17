@@ -7,6 +7,11 @@
     <title>Candy Market Register New User</title>
 </head>
 <body>
-    
+    <form action="/register" method="POST">
+        @csrf
+        <input type="text" name="phone" placeholder="Phone" required/>
+        <input type="password" name="password" placeholder="Password" required/>
+        <input type="submit" value="Register">
+    </form>
 </body>
 </html>
