@@ -59,10 +59,6 @@
     - ~~~php
 
       ~~~
-- Make `dashboard.blade.php`
-    - ~~~php
-
-      ~~~
 - Make `basket.blade.php` as a shopping basket
     - ~~~php
 
