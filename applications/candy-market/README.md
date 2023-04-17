@@ -35,11 +35,21 @@
     - `php artisan migrate:fresh`
 - Make `register.blade.php`
     - ~~~php
-
+        <form action="/register" method="POST">
+            @csrf
+            <input type="text" name="phone" placeholder="Phone" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+            <input type="submit" value="Register">
+        </form>
       ~~~
 - Make `login.blade.php`
     - ~~~php
-
+        <form action="/login" method="POST">
+            @csrf
+            <input type="text" name="phone" placeholder="Phone" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+            <input type="submit" value="Login">
+        </form>
       ~~~
 - Make `create.blade.php` to create new candy post
     - ~~~php
