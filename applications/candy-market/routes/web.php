@@ -45,3 +45,8 @@ Route::get("/logout", function () {
     Auth::logout();
     return Redirect('home');
 });
+
+Route::view("/create", "create");
+Route::post("/create", function (Request $request) {
+    
+});

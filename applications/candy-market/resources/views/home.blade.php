@@ -19,6 +19,7 @@
     @else
         @if (Auth::user()["role"]==2)
             <h1>Admin</h1>
+            <a href="/create">Create</a>
         @else
             <h1>User</h1>
         @endif
