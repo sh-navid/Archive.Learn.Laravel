@@ -14,12 +14,15 @@
 <body>
     @guest
         <h1>Guest</h1>
+        <a href="/login">Login</a> | 
+        <a href="/register">Register</a>
     @else
-        @if (Auth::user()["role"]==1)
+        @if (Auth::user()["role"]==2)
             <h1>Admin</h1>
         @else
             <h1>User</h1>
         @endif
+        <a href="/logout">Logout</a>
     @endguest
 </body>
 </html>
