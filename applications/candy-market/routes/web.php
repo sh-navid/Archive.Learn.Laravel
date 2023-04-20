@@ -25,7 +25,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('home');
+    $candies = Candy::all();
+    return view('home', compact("candies"));
 });
 
 Route::view("/register", "register");
@@ -50,8 +51,10 @@ Route::get("/logout", function () {
 
 Route::view("/create", "create");
 Route::post("/create", function (Request $request) {
+    if (!Auth::check() || (Auth::check() and Auth::user()->role != 2))
+        return "<h1>Forbidden Action</h1>";
     $file = $request->file('imagefile');
-    $uid=(string) Str::uuid().".".$file->getClientOriginalExtension();
+    $uid = (string) Str::uuid() . "." . $file->getClientOriginalExtension();
     $file->move('uploads', $uid);
     $request["image"] = $uid;
     $request["user_id"] = Auth::user()->id;

@@ -25,5 +25,10 @@
         @endif
         <a href="/logout">Logout</a>
     @endguest
+
+    @foreach ($candies as $candy)
+        <h3>{{$candy->title}}</h3>
+        <p>{{$candy->desc}}</p>
+    @endforeach
 </body>
 </html>
