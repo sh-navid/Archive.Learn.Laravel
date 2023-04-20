@@ -77,6 +77,15 @@
             <input type="submit" value="Register">
         </form>
       ~~~
+    - Also in `web.php`
+        - ~~~php
+            Route::view("/register", "register");
+            Route::post("/register", function (Request $request) {
+                $request["password"] = Hash::make($request['password']);
+                User::create($request->all());
+                return redirect("login");
+            });
+        - ~~~
 - Make `login.blade.php`
     - ~~~php
         <form action="/login" method="POST">
@@ -86,6 +95,21 @@
             <input type="submit" value="Login">
         </form>
       ~~~
+    - Also in `web.php`
+        - ~~~php
+            Route::view("/login", "login");
+            Route::post("/login", function (Request $request) {
+                if (Auth::attempt($request->only('phone', 'password')))
+                    return redirect('home');
+                return redirect("login");
+            });
+
+            Route::get("/logout", function () {
+                Session::flush();
+                Auth::logout();
+                return Redirect('home');
+            });
+        - ~~~
 - Make `create.blade.php` to create new candy post
     - ~~~php
         <form action="/create" method="POST" enctype="multipart/form-data">
@@ -103,11 +127,38 @@
             <input type="submit" value="Create">
         </form>
       ~~~
+    - Also in `web.php`
+        - ~~~php
+            Route::view("/create", "create");
+            Route::post("/create", function (Request $request) {
+                $file = $request->file('imagefile');
+                $uid=(string) Str::uuid().".".$file->getClientOriginalExtension();
+                $file->move('uploads', $uid);
+                $request["image"] = $uid;
+                $request["user_id"] = Auth::user()->id;
+                Candy::create($request->all());
+                return redirect('home');
+            });
+        - ~~~
 - Make `home.blade.php`
     - ~~~php
 
       ~~~
+    - Also in `web.php`
+        - ~~~php
+            Route::get('/', function () {
+                return redirect("/home");
+            });
+
+            Route::get('/home', function () {
+                return view('home');
+            });
+        - ~~~
 - Make `basket.blade.php` as a shopping basket
     - ~~~php
 
       ~~~
+    - Also in `web.php`
+        - ~~~php
+
+        - ~~~
