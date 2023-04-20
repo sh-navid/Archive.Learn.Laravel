@@ -90,7 +90,7 @@
     - ~~~php
         <form action="/create" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="file" name="image" required/>
+            <input type="file" name="imagefile" required/>
             <input type="text" name="title" placeholder="title" required/>
             <input type="text" name="description" placeholder="description" required/>
             <input type="number" name="price" placeholder="price" required/>

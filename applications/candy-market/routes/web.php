@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,9 +50,10 @@ Route::get("/logout", function () {
 
 Route::view("/create", "create");
 Route::post("/create", function (Request $request) {
-    $file = $request->file('image');
-    $file->move('uploads', $file->getClientOriginalName());
-    $request["image"] = $file->getClientOriginalName();
+    $file = $request->file('imagefile');
+    $uid=(string) Str::uuid().".".$file->getClientOriginalExtension();
+    $file->move('uploads', $uid);
+    $request["image"] = $uid;
     $request["user_id"] = Auth::user()->id;
     Candy::create($request->all());
     return redirect('home');
