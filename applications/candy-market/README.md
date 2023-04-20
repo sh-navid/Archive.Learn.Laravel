@@ -85,7 +85,7 @@
                 User::create($request->all());
                 return redirect("login");
             });
-        - ~~~
+          ~~~
 - Make `login.blade.php`
     - ~~~php
         <form action="/login" method="POST">
@@ -109,7 +109,7 @@
                 Auth::logout();
                 return Redirect('home');
             });
-        - ~~~
+          ~~~
 - Make `create.blade.php` to create new candy post
     - ~~~php
         <form action="/create" method="POST" enctype="multipart/form-data">
@@ -141,7 +141,7 @@
                 Candy::create($request->all());
                 return redirect('home');
             });
-        - ~~~
+          ~~~
 - Make `home.blade.php`
     - ~~~php
         <body>
@@ -186,7 +186,7 @@
                 $candies = Candy::all();
                 return view('home', compact("candies"));
             });
-        - ~~~
+          ~~~
 - Make `basket.blade.php` as a shopping basket
     - ~~~php
 
@@ -194,4 +194,4 @@
     - Also in `web.php`
         - ~~~php
 
-        - ~~~
+          ~~~
