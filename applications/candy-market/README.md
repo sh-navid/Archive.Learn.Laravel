@@ -21,6 +21,18 @@
       ~~~
     - `php artisan migrate`
     - `php artisan migrate:fresh`
+    - Also update `Candy` model like this:
+    - ~~~php
+        protected $fillable = [
+            'image',
+            'title',
+            'description',
+            'price',
+            'amount',
+            'type',
+            'user_id'
+        ];
+      ~~~
 - Update user migration like this:
     - ~~~php
         Schema::create('users', function (Blueprint $table) {
@@ -76,7 +88,20 @@
       ~~~
 - Make `create.blade.php` to create new candy post
     - ~~~php
-
+        <form action="/create" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="image" required/>
+            <input type="text" name="title" placeholder="title" required/>
+            <input type="text" name="description" placeholder="description" required/>
+            <input type="number" name="price" placeholder="price" required/>
+            <input type="number" name="amount" placeholder="amount" required/>
+            <select name="type" id="type" required>
+                <option value="1">KG</option>
+                <option value="2">Piece</option>
+                <option value="3">Box</option>
+            </select>
+            <input type="submit" value="Create">
+        </form>
       ~~~
 - Make `home.blade.php`
     - ~~~php

@@ -14,7 +14,11 @@
         <input type="text" name="description" placeholder="description" required/>
         <input type="number" name="price" placeholder="price" required/>
         <input type="number" name="amount" placeholder="amount" required/>
-        <input type="text" name="type" placeholder="type" required/>
+        <select name="type" id="type" required>
+            <option value="1">KG</option>
+            <option value="2">Piece</option>
+            <option value="3">Box</option>
+        </select>
         <input type="submit" value="Create">
     </form>
 </body>

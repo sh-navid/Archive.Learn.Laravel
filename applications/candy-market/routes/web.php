@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Candy;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -48,5 +49,10 @@ Route::get("/logout", function () {
 
 Route::view("/create", "create");
 Route::post("/create", function (Request $request) {
-    
+    $file = $request->file('image');
+    $file->move('uploads', $file->getClientOriginalName());
+    $request["image"] = $file->getClientOriginalName();
+    $request["user_id"] = Auth::user()->id;
+    Candy::create($request->all());
+    return redirect('home');
 });

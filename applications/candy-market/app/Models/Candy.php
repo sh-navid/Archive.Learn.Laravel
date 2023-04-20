@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Candy extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'image',
+        'title',
+        'description',
+        'price',
+        'amount',
+        'type',
+        'user_id'
+    ];
 }
