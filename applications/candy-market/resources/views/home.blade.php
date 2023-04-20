@@ -26,11 +26,18 @@
         <a href="/logout">Logout</a>
     @endguest
 
+    @php
+        const TYPES=[1=>"KG",2=>"دونه",3=>"جعبه"]   
+    @endphp
+
     @foreach ($candies as $candy)
         <h3>{{$candy->title}}</h3>
         <p>{{$candy->desc}}</p>
+        <h6>Amount</h6>
         {{$candy->amount}}
-        {{$candy->type}}
+        <h6>Type</h6>
+        {{TYPES[$candy->type]}}
+        <h6>Price</h6>
         {{$candy->price}}
         <img src="{{url('/uploads/'.$candy->image)}}" alt="">
     @endforeach

@@ -144,7 +144,37 @@
         - ~~~
 - Make `home.blade.php`
     - ~~~php
+        <body>
+            @guest
+                <h1>Guest</h1>
+                <a href="/login">Login</a> | 
+                <a href="/register">Register</a>
+            @else
+                @if (Auth::user()["role"]==2)
+                    <h1>Admin</h1>
+                    <a href="/create">Create</a>
+                @else
+                    <h1>User</h1>
+                @endif
+                <a href="/logout">Logout</a>
+            @endguest
 
+            @php
+                const TYPES=[1=>"KG",2=>"دونه",3=>"جعبه"]   
+            @endphp
+
+            @foreach ($candies as $candy)
+                <h3>{{$candy->title}}</h3>
+                <p>{{$candy->desc}}</p>
+                <h6>Amount</h6>
+                {{$candy->amount}}
+                <h6>Type</h6>
+                {{TYPES[$candy->type]}}
+                <h6>Price</h6>
+                {{$candy->price}}
+                <img src="{{url('/uploads/'.$candy->image)}}" alt="">
+            @endforeach
+        </body>
       ~~~
     - Also in `web.php`
         - ~~~php
