@@ -166,13 +166,13 @@
             @foreach ($candies as $candy)
                 <h3>{{$candy->title}}</h3>
                 <p>{{$candy->desc}}</p>
-                <h6>Amount</h6>
-                {{$candy->amount}}
-                <h6>Type</h6>
-                {{TYPES[$candy->type]}}
-                <h6>Price</h6>
-                {{$candy->price}}
+                <h5>Amount {{$candy->amount}} {{TYPES[$candy->type]}}</h5>
+                <h5>Price {{$candy->price}} Rials</h5>
                 <img src="{{url('/uploads/'.$candy->image)}}" alt="">
+                @if (Auth::user()!=null && Auth::user()["role"]==1)
+                <button>Add to basket</button>
+                @endif
+                <hr/>
             @endforeach
         </body>
       ~~~
