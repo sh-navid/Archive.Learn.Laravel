@@ -29,6 +29,10 @@
     @foreach ($candies as $candy)
         <h3>{{$candy->title}}</h3>
         <p>{{$candy->desc}}</p>
+        {{$candy->amount}}
+        {{$candy->type}}
+        {{$candy->price}}
+        <img src="{{url('/uploads/'.$candy->image)}}" alt="">
     @endforeach
 </body>
 </html>
