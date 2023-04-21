@@ -78,3 +78,12 @@
   ~~~
 - fix database password in `.env` file
 - `php artisan migrate:fresh`
+- change user model
+- ~~~php
+    protected $fillable = [
+        'username',
+        'api_token',
+        'password',
+    ];
+  ~~~
+- call `localhost:8000/api/login` with postman; post method and username and password in form data
