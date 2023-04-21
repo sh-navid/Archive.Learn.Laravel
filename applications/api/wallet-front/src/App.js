@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const Records = () => {
   const [data, setData] = useState([]);
@@ -22,8 +22,10 @@ const Records = () => {
         <span>Loading ...</span>
       ) : (
         <div>
-          {data.answers.map((item, index) => (
-            <span key={index}>{item}</span>
+          {data.map((item, index) => (
+            <div>
+              {item.amount} - {item.type}
+            </div>
           ))}
         </div>
       )}
@@ -32,7 +34,7 @@ const Records = () => {
 };
 
 const App = () => {
-  return <Records/>;
+  return <Records />;
 };
 
 export default App;
