@@ -17,7 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::prefix('tasks')->as('tasks:')->middleware(['auth:sanctum', 'verified'])->group(
-    base_path('routes/api/tasks.php'),
-);

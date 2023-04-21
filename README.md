@@ -39,4 +39,4 @@
 - [Laravel + SocketIO Game](applications/game/README.md)
 - [Candy Market](applications/candy-market/README.md)
 ---
-- [API](topic/api/README.md)
+- [API](applications/api/README.md)
