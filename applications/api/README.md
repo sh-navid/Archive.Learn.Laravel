@@ -62,3 +62,19 @@
             ->header('Content-Type', 'application/json');
     });
   ~~~
+- change users migration
+- ~~~php
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('username')->unique();
+            $table->string('password');
+            $table->string('api_token', 80)
+                ->unique()
+                ->nullable()
+                ->default(null);
+            $table->rememberToken();
+            $table->timestamps();
+        });
+  ~~~
+- fix database password in `.env` file
+- `php artisan migrate:fresh`
