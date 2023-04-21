@@ -68,7 +68,7 @@
             $table->id();
             $table->string('username')->unique();
             $table->string('password');
-            $table->string('api_token', 80)
+            $table->string('api_token', 60)
                 ->unique()
                 ->nullable()
                 ->default(null);
@@ -87,3 +87,40 @@
     ];
   ~~~
 - call `localhost:8000/api/login` with postman; post method and username and password in form data
+- ~~~php
+    Route::get('fake', function () {
+        User::create([
+            "username" => "test",
+            "password" => Hash::make("123"),
+            "api_token" => null
+        ]);
+        return "User Created";
+    });
+
+
+    Route::post('register', function (Request $request) {
+        $request["password"] = Hash::make($request->password);
+        $user = User::create($request->only("username", "password"));
+        return $user;
+    });
+
+
+    Route::post('login', function (Request $request) {
+        if (Auth::attempt($request->only("username", "password"))) {
+            $user = User::find(Auth::user()->id);
+            $user->api_token = Str::random(60);
+            $user->save();
+            return Auth::user()->fresh();
+        }
+        return response()->json(['error' => 'Not authenticated', 'data' => $request->only("username")], 401);
+    });
+
+
+    Route::post('logout', function (Request $request) {
+        $user = User::where("api_token", $request->api_token);
+        $user->api_token = null;
+        $user->save();
+        return response()->json(['message' => 'You are logged out']);
+    });
+  ~~~
+- **NOTICE**: This is not the BEST PRACTICE; read about `auth:sanctum` and `passport` instead 
